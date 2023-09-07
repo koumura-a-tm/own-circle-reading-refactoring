@@ -68,6 +68,7 @@ describe("no producers", function () {
 // 次の結果は？
 // 不足分が0 にならないという形で、テストが失敗するということにはならない。
 // でもMochaは これを失敗として扱います。
+// 渡ってくるべき値 が 渡ってこない場合はテストいらない的 な認識
 describe("string for producers", function () {
   it("shortfall", function () {
     const data = {
