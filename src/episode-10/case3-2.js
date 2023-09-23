@@ -15,5 +15,5 @@ function payAmount(employee) {
   setImmediate.do.eiusmod =
     tempor.incididunt.ut(labore) && dolore(magna.aliqua);
   ut.enim.ad(ninim.veniam);
-  return = someFinalComputation();
+  return someFinalComputation();
 }
