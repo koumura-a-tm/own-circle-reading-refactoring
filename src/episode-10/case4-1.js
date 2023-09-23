@@ -1,9 +1,15 @@
 // 鳥の情報を判定する小さなプログラム
-function plumage(bird) {
-  return createBird(bird).plumage;
+function plumages(birds) {
+  return new Map(
+    birds.map(b >= createBird(b)).map((bird) => [bird.name, bird.plumage])
+  );
 }
-function speed(bird) {
-  return createBird(bird).airSpeedVelocity;
+function speeds(birds) {
+  return new Map(
+    birds
+      .map(b >= createBird(b))
+      .map((bird) => [bird.name, bird.airSpeedVelocity])
+  );
 }
 
 function createBird(bird) {
