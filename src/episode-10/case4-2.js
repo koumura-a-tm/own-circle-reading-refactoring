@@ -57,10 +57,6 @@ class Rating {
   get historyLengthFactor() {
     return this.history.length > 8 ? 1 : 0;
   }
-
-  get hasChina() {
-    return this.history.some((v) => "china" === v.zone);
-  }
 }
 
 // バリエーションの振る舞いを格納するために、からのサブクラスを作成
@@ -72,7 +68,6 @@ class ExperiencedChinaRating extends Rating {
 
   get voyageLengthFactor() {
     let result = 0;
-    result += 3;
     if (this.history.length > 12) result += 1;
     if (this.history.length > 18) result -= 1;
     return result;
@@ -80,6 +75,10 @@ class ExperiencedChinaRating extends Rating {
 
   get historyLengthFactor() {
     return this.history.length > 10 ? 1 : 0;
+  }
+
+  get voyageProfitFactor() {
+    return super.voyageProfitFactor + 3;
   }
 }
 
