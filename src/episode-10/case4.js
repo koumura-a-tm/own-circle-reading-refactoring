@@ -3,7 +3,7 @@ switch (bird.type) {
   case "EuropeanSwallow":
     return "avarage";
   case "AfircanSwallow":
-    return bird.numberOfCocounts > 2 ? "tired" : "avarage";
+    return bird.numberOfCoconuts > 2 ? "tired" : "avarage";
   case "NorwegianBlueParrot":
     return bird.voltage > 100 ? "scorched" : "beautiful";
   default:
