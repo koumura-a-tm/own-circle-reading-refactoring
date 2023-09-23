@@ -19,6 +19,12 @@ class Customer {
   }
 }
 
+class UnknownCustomer {
+  get name() {
+    return "occupant";
+  }
+}
+
 function isUnknown(arg) {
   if (!(arg instanceof Customer || arg instanceof UnknownCustomer))
     throw new Error(`不正な値について要調査: <${arg}>`);
@@ -29,7 +35,7 @@ function isUnknown(arg) {
 const aCustomer = site.customer;
 // ... 大量のコードが入る ...
 let customerName;
-if (isUnknown(aCustomer)) customerName = "occupant";
+if (isUnknown(aCustomer)) customerName = aCustomer.name;
 else customerName = aCustomer.name;
 
 // client2
