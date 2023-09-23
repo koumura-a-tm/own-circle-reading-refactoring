@@ -15,11 +15,11 @@ class Customer {
   get isUnknown() {
     return false;
   }
+}
 
-  class UnknownCustomer {
-    get isUnknown() {
-      return true;
-    }
+class UnknownCustomer {
+  get isUnknown() {
+    return true;
   }
 }
 
