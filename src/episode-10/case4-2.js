@@ -27,6 +27,7 @@ function captainHistoryRisk(voyage, history) {
   let result = 1;
   if (voyage.length < 5) result += 4;
   result += history.filter((v) => v.profit < 0).length;
+  // 船長が過去に中国への航海経験がある場合
   if (voyage.zone === "china" && hasChina(history)) result -= 2;
   return Math.max(result, 0);
 }
@@ -40,6 +41,7 @@ function voyageProfitFactor(voyage, history) {
   let result = 2;
   if (voyage.zone === "china") result += 1;
   if (voyage.zone === "east-indies") result += 1;
+  // 船長が過去に中国への航海経験がある場合
   if (voyage.zone === "china" && hasChina(history)) {
     result += 3;
     if (history.length > 10) result += 1;
