@@ -6,7 +6,7 @@
 
 // 計算ポイントによって A / B を付与
 function rating(voyage, history) {
-  return new Rating(voyage, history).value;
+  return createRating(voyage, history).value;
 }
 
 class Rating {
