@@ -1,9 +1,11 @@
 // 障害手当てを計算する
-// 連続した条件判定ですが、結果は全て同じ。
-// 結果が同じなので、条件を１つにまとめるべき。
-// 連続した条件判定の場合はor演算子 || を使って結合します。
 
+// テストを行い、次の条件判定を取り込みます。
 function disabilityAmount(anEmployee) {
-  if (anEmployee.seniority < 2 || anEmployee.monthsDisabled > 12) return 0;
-  if (anEmployee.isPartTime) return 0;
+  if (
+    anEmployee.seniority < 2 ||
+    anEmployee.monthsDisabled > 12 ||
+    anEmployee.isPartTime
+  )
+    return 0;
 }
