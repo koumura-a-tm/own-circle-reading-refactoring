@@ -1,11 +1,14 @@
 // 障害手当てを計算する
 
-// テストを行い、次の条件判定を取り込みます。
+// まとめた条件に対して、関数の抽出 を行う
 function disabilityAmount(anEmployee) {
-  if (
+  if (isNotEligibleForDisability) return 0;
+}
+
+function isNotEligibleForDisability() {
+  return (
     anEmployee.seniority < 2 ||
     anEmployee.monthsDisabled > 12 ||
     anEmployee.isPartTime
-  )
-    return 0;
+  );
 }
