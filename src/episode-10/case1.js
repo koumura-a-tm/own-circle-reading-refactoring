@@ -6,7 +6,7 @@ function summer() {
 }
 
 function summerCharge() {
-  return !aDate.isBefore(plan.summerStart) && !aDate.isAfter(plan.summerEnd);
+  return quantity * plan.summerRate;
 }
 
 function regularCharge() {
