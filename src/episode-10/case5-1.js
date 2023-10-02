@@ -23,6 +23,18 @@ class UnknownCustomer {
   get name() {
     return "occupant";
   }
+  get billingPlan() {
+    return registry.billingPlans.basic;
+  }
+  set billingPlan(arg) {
+    // 何もしない
+  }
+}
+
+class NullPaymentHistory {
+  get weeksDelinquentInLastYear() {
+    return 0;
+  }
 }
 
 function isUnknown(arg) {
@@ -40,13 +52,17 @@ else customerName = aCustomer.name;
 
 // client2
 const plan = isUnknown(aCustomer)
-  ? CustomElementRegistry.billingPlans.basic
+  ? registry.billingPlans.basic
   : aCustomer.billingPlan;
 
 // client3
 if (!isUnknown(aCustomer)) aCustomer.billingPlan = newPlan;
 
 // client4
-const weeksDelinquent = isUnknown(aCustomer)
-  ? 0
-  : aCustomer.paymentHistory.weeksDelinquentInLastYear;
+const weeksDelinquent = aCustomer.paymentHistory.weeksDelinquentInLastYear;
+
+// client reader（読み込み処理）
+const plan = aCustomer.billingPlan;
+
+// client writer（更新処理）
+aCustomer.billingPlan = newPlan;
